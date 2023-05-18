@@ -24,4 +24,10 @@ router.get('/profile', async (req, res) => {
     res.json(req.currentUser)
 })
 
+router.get('/logout', async (req, res) => {
+    req.session = null
+    req.currentUser = null
+    res.status(200).json({ message: 'Successfully logged out' })
+})
+
 module.exports = router
