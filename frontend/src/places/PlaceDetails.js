@@ -33,7 +33,8 @@ function PlaceDetails() {
 
 	async function deletePlace() {
 		await fetch(`http://localhost:5000/places/${place.placeId}`, {
-			method: 'DELETE'
+			method: 'DELETE',
+			credentials: 'include'
 		})
 		history.push('/places')
 	}
